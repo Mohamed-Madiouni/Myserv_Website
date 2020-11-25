@@ -1,21 +1,161 @@
-import React from 'react'
-import "../navbar.css"
-function Navbar() {
-    return (
-        <div className="">
-         
-                <div className="row">
-                    <div className="col-4">
-<img src="/vibtic.png" alt="vibtic"/>
-                    </div>
-                    <div className="col-8">
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { MDBIcon } from "mdbreact";
+import "../navbar.css";
+function Navbar({setPad}) {
+    const [navHeight,setNavHeight]=useState("80px")
+    const [imgHeight,setimgHeight]=useState("35px")
+    const [imgwidth,setImgWidth]=useState("140px")
+    const [drop,setDrop] = useState({valeur:0})
+    const [under,setUnder] = useState(0)
+    const [size,setSize] = useState(false)
+    
+    useEffect(()=>{
+     window.addEventListener("scroll",()=>{
+if(window.scrollY>0)
+{
+    setNavHeight("55px")
+    setimgHeight("30px")
+    setImgWidth("110px")
+    setPad("55px")
+}
+else{
+    setNavHeight("80px")
+    setimgHeight("35px")
+setImgWidth("140px")
+setPad("80px")
+} 
+     })  
+    })
+    useEffect(()=>{
+window.addEventListener("resize",()=>{
+    if(window.innerWidth<=992)
+    {
+        setSize(true)
+    setPad("55px")
+}
+    else
+    setSize(false)
+    setNavHeight("80px")
+    setimgHeight("35px")
+setImgWidth("140px")
+    setPad("80px")
+})
 
-                    </div>
-                </div>
+    })
 
-      
+    useEffect(()=>{
+        if(window.innerWidth<=992)
+        {
+            setSize(true)
+        setPad("55px")
+    }
+    if(window.scrollY>0)
+{
+    setNavHeight("55px")
+    setimgHeight("30px")
+    setImgWidth("110px")
+    setPad("55px")
+}
+    },[])
+    
+    
+       
+    
+  return (
+    <>
+     { size?
+     <div className="row navb" style={{  height:55 }}>
+ <div className="col-5" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
+          <img src="/vibtic.png" alt="vibtic" style={{width:140 ,height:35}} />
         </div>
-    )
+<div className="col-6" style={{display:"flex",justifyContent:"flex-end",alignItems:"center",fontSize:25}}>
+<MDBIcon icon="align-justify"  className="grey-text" />
+
+</div>
+
+     </div>
+     
+     :     
+     <div  className="row navb" style={{  height:navHeight&&navHeight }}>
+        <div className="col-4" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
+          <img src="/vibtic.png" alt="vibtic" className="img_vib" style={{width:imgwidth ,height:imgHeight, transition: "width 0.5s"}} />
+        </div>
+        <div className="col-xl-7 col-8 second">
+            <div className="drop" style={{position:"relative",textDecoration:under==1&&"underline"}}>
+          <Link to="" onMouseEnter={()=>{setDrop({...drop,valeur:1});setUnder(1)}} onClick={()=>{setDrop({...drop,valeur:1});setUnder(1)}}>
+            QUI SOMMES-NOUS ? <MDBIcon icon="angle-down" className="ml-1"/>
+          </Link>
+         { drop.valeur==1&& <div style={{position:"absolute",top:30,right:0,width:"max-content"}}  onMouseLeave={()=>{setDrop({...drop,valeur:0});setUnder(0)}}>
+          <ul  style={{listStyleType:"none",padding:0,margin:0}}>
+              <li>
+                  VIBTIC
+              </li>
+              <li>
+                 compétences & expertise
+              </li>
+              <li>
+                 implantation
+              </li>
+              <li>
+                  nos valeurs et nos engagements
+              </li>
+              <li>
+                  références
+              </li>
+          </ul>
+          </div>}
+          </div >
+          <div className="drop" style={{position:"relative",textDecoration:under==2&&"underline"}}>
+          <Link to="" onMouseEnter={()=>{setDrop({...drop,valeur:2});setUnder(2)}} onClick={()=>{setDrop({...drop,valeur:2});setUnder(2)}} >
+            NOS ACTIVITÉS <MDBIcon icon="angle-down" className="ml-1" />
+          </Link>
+          {drop.valeur==2&&<div style={{position:"absolute",top:30,right:0,width:"max-content"}} onMouseLeave={()=>{setDrop({...drop,valeur:0});setUnder(0)}}>
+          <ul  style={{listStyleType:"none",padding:0,margin:0}}>
+              <li>
+                  systéme d'information
+              </li>
+              <li>
+                 réseaux & sécurité
+              </li>
+              <li>
+                système
+              </li>
+              <li>
+                  développement informatique
+              </li>
+              <li>
+                  gestion du projet et management
+              </li>
+          </ul>
+          </div>}
+          </div>
+          <div className="drop" style={{position:"relative",textDecoration:under==3&&"underline"}}>
+          <Link to="" onMouseEnter={()=>{setDrop({...drop,valeur:3});setUnder(3)}} onClick={()=>{setDrop({...drop,valeur:3});setUnder(3)}}>
+            NOUS REJOINDRE <MDBIcon icon="angle-down" className="ml-1" />
+          </Link>
+         {drop.valeur==3&& <div  style={{position:"absolute",top:30,right:0,width:"max-content"}} onMouseLeave={()=>{setDrop({...drop,valeur:0});setUnder(0)}}>
+         <ul  style={{listStyleType:"none",padding:0,margin:0}}>
+              <li>
+                 notre politique rh
+              </li>
+              <li>
+                 nos offres d'emploi
+              </li>
+              <li>
+                candidature spantannée
+              </li>
+             
+          </ul>
+          </div>}
+          </div>
+          <div style={{position:"relative"}}>
+          <Link to="">NOUS CONTACTER</Link>
+          </div>
+        </div>
+      </div>}
+    </>
+  );
 }
 
-export default Navbar
+export default Navbar;
