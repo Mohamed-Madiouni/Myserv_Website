@@ -9,6 +9,7 @@ function Navbar({setPad}) {
     const [drop,setDrop] = useState({valeur:0})
     const [under,setUnder] = useState(0)
     const [size,setSize] = useState(false)
+    const [clk,setClk] = useState(false)
     
     useEffect(()=>{
      window.addEventListener("scroll",()=>{
@@ -23,7 +24,7 @@ else{
     setNavHeight("80px")
     setimgHeight("35px")
 setImgWidth("140px")
-setPad("80px")
+window.innerWidth>992&&setPad("80px")
 } 
      })  
     })
@@ -35,11 +36,13 @@ window.addEventListener("resize",()=>{
     setPad("55px")
 }
     else
-    setSize(false)
+   { 
+     setSize(false)
     setNavHeight("80px")
     setimgHeight("35px")
 setImgWidth("140px")
-    setPad("80px")
+setPad("80px")
+  }
 })
 
     })
@@ -65,26 +68,100 @@ setImgWidth("140px")
   return (
     <>
      { size?
-     <div className="row navb" style={{  height:55 }}>
- <div className="col-5" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
-          <img src="/vibtic.png" alt="vibtic" style={{width:140 ,height:35}} />
+     <div className="row navb" style={{ height:clk?425:55}}>
+       
+ <div className="col-8 pad"  style={{height:55,display:"flex",alignItems:"center",justifyContent:"flex-start"}}>
+          <img src="/vibtic.png" alt="vibtic" className="img_vib"  style={{width:140 ,height:35}} />
         </div>
-<div className="col-6" style={{display:"flex",justifyContent:"flex-end",alignItems:"center",fontSize:25}}>
-<MDBIcon icon="align-justify"  className="grey-text" />
+<div className="col-3" style={{height:55,display:"flex",justifyContent:"flex-end",alignItems:"center",fontSize:25}}>
+<MDBIcon icon={clk?"times":"align-justify"}  className="grey-text" onClick={()=>setClk(!clk)}/>
 
 </div>
+
+
+ {clk&& <div className="col-8 pad"  style={{marginBottom:65}}>
+
+  <ul className="ul_drop" style={{listStyleType:"none",padding:0,margin:0,color:"gray",fontSize:13,fontWeight: 500}}>
+              <li>
+                <span>QUI SOMMES-NOUS ?</span>
+                 
+                 <ul style={{listStyleType:"none",paddingLeft:10,margin:0}}>
+                 <li>
+                  VIBTIC
+              </li>
+              <li>
+                 compétences & expertise
+              </li>
+              <li>
+                 implantation
+              </li>
+              <li>
+                  nos valeurs et nos engagements
+              </li>
+              <li>
+                  références
+              </li>
+                 </ul>
+              </li>
+              <li>
+                <span>NOS ACTIVITÉS</span>
+              
+              <ul style={{listStyleType:"none",paddingLeft:10,margin:0}}>
+              
+              <li>
+                  systéme d'information
+              </li>
+              <li>
+                 réseaux & sécurité
+              </li>
+              <li>
+                système
+              </li>
+              <li>
+                  développement informatique
+              </li>
+              <li>
+                  gestion du projet et management
+              </li>
+          
+              </ul>
+              </li>
+              <li>
+                <span> NOUS REJOINDRE</span>
+             
+                <ul style={{listStyleType:"none",paddingLeft:10,margin:0}}>
+                <li>
+                 notre politique rh
+              </li>
+              <li>
+                 nos offres d'emploi
+              </li>
+              <li>
+                candidature spantannée
+              </li>
+                </ul>
+              </li>
+              <li>
+             <span>NOUS CONTACTER</span> 
+              </li>
+             
+          </ul>
+  
+
+  
+</div>}
 
      </div>
      
      :     
      <div  className="row navb" style={{  height:navHeight&&navHeight }}>
         <div className="col-4" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
-          <img src="/vibtic.png" alt="vibtic" className="img_vib" style={{width:imgwidth ,height:imgHeight, transition: "width 0.5s"}} />
+          <img src="/vibtic.png" alt="vibtic" style={{width:imgwidth ,height:imgHeight, transition: "width 0.5s"}} />
         </div>
         <div className="col-xl-7 col-8 second">
             <div className="drop" style={{position:"relative",textDecoration:under==1&&"underline"}}>
           <Link to="" onMouseEnter={()=>{setDrop({...drop,valeur:1});setUnder(1)}} onClick={()=>{setDrop({...drop,valeur:1});setUnder(1)}}>
-            QUI SOMMES-NOUS ? <MDBIcon icon="angle-down" className="ml-1"/>
+            QUI SOMMES-NOUS ? <MDBIcon icon="angle-down" className="ml-1" size="lg"/>
           </Link>
          { drop.valeur==1&& <div style={{position:"absolute",top:30,right:0,width:"max-content"}}  onMouseLeave={()=>{setDrop({...drop,valeur:0});setUnder(0)}}>
           <ul  style={{listStyleType:"none",padding:0,margin:0}}>
@@ -108,7 +185,7 @@ setImgWidth("140px")
           </div >
           <div className="drop" style={{position:"relative",textDecoration:under==2&&"underline"}}>
           <Link to="" onMouseEnter={()=>{setDrop({...drop,valeur:2});setUnder(2)}} onClick={()=>{setDrop({...drop,valeur:2});setUnder(2)}} >
-            NOS ACTIVITÉS <MDBIcon icon="angle-down" className="ml-1" />
+            NOS ACTIVITÉS <MDBIcon icon="angle-down" className="ml-1" size="lg" />
           </Link>
           {drop.valeur==2&&<div style={{position:"absolute",top:30,right:0,width:"max-content"}} onMouseLeave={()=>{setDrop({...drop,valeur:0});setUnder(0)}}>
           <ul  style={{listStyleType:"none",padding:0,margin:0}}>
@@ -132,7 +209,7 @@ setImgWidth("140px")
           </div>
           <div className="drop" style={{position:"relative",textDecoration:under==3&&"underline"}}>
           <Link to="" onMouseEnter={()=>{setDrop({...drop,valeur:3});setUnder(3)}} onClick={()=>{setDrop({...drop,valeur:3});setUnder(3)}}>
-            NOUS REJOINDRE <MDBIcon icon="angle-down" className="ml-1" />
+            NOUS REJOINDRE <MDBIcon icon="angle-down" className="ml-1" size="lg"/>
           </Link>
          {drop.valeur==3&& <div  style={{position:"absolute",top:30,right:0,width:"max-content"}} onMouseLeave={()=>{setDrop({...drop,valeur:0});setUnder(0)}}>
          <ul  style={{listStyleType:"none",padding:0,margin:0}}>

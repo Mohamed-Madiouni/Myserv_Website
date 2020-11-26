@@ -1,0 +1,21 @@
+.msg-home{
+    padding-right: 35%;
+    top:25%;
+    font-size: 30px
+}
+.welcome{
+    height: 550px;
+}
+.service_home{
+    height: 650px;
+}
+@media screen and (max-width:500px){
+    .msg-home{
+        padding-right: 0% !important;
+        top:15%;
+        font-size: 20px
+    }
+    .welcome{
+        height: 350px !important;
+    }
+}

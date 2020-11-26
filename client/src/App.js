@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import './App.css';
+import Home from './component/Home';
 import Navbar from './component/Navbar';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
   return (
     <div className="App" style={{paddingTop:pad}}>
    <Navbar setPad={setPad}/>
+   <Home/>
     </div>
   );
 }

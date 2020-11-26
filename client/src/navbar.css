@@ -6,9 +6,15 @@
    z-index:10;
    transition: all 0.5s ease;
 width: 100%;
+background-color: white;
+
 }
 .navb i{
     cursor: pointer;
+    /* font-size: 25px; */
+}
+.pad{
+    padding-left: 80px !important;
 }
 .second{
     display: flex;
@@ -26,7 +32,8 @@ margin: 5px;
     box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.6);
 -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.6);
 -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.6);
-
+z-index: 10;
+background-color: white;
 display: flex;
 justify-content: flex-end;
 align-items: center;
@@ -43,11 +50,22 @@ font-size: 13px;
 }
 .drop{
     text-underline-offset: 2px;
+   
+}
+.ul_drop span{
+    color: rgb(56, 55, 55);
+    font-weight: 600;
+    font-size: 15;
 }
 
 @media screen and (max-width:400px){
     .img_vib{
-        width: 90px;
-        height: 25px;
+        width: 90px !important;
+        height: 25px !important;
+    }
+}
+@media screen and (max-width:550px){
+    .pad{
+        padding-left: 20px !important;
     }
 }
