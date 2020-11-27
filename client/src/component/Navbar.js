@@ -68,7 +68,7 @@ setPad("80px")
   return (
     <>
      { size?
-     <div className="row navb" style={{ height:clk?425:55}}>
+     <div className="row navb" style={{ height:clk?290:55}}>
        
  <div className="col-8 pad"  style={{height:55,display:"flex",alignItems:"center",justifyContent:"flex-start"}}>
           <img src="/vibtic.png" alt="vibtic" className="img_vib"  style={{width:140 ,height:35}} />
@@ -79,13 +79,14 @@ setPad("80px")
 </div>
 
 
- {clk&& <div className="col-8 pad"  style={{marginBottom:65}}>
+ {clk&& <div className="col-8 pad"  style={{marginBottom:110,lineHeight:"23px"}}>
 
-  <ul className="ul_drop" style={{listStyleType:"none",padding:0,margin:0,color:"gray",fontSize:13,fontWeight: 500}}>
+  <ul className="ul_drop" style={{listStyleType:"none",padding:0,margin:0,color:"gray",fontSize:14,fontWeight: 500}}>
               <li>
-                <span>QUI SOMMES-NOUS ?</span>
+                <Link to="/"> <span>QUI SOMMES-NOUS ?</span></Link>
+               
                  
-                 <ul style={{listStyleType:"none",paddingLeft:10,margin:0}}>
+                 {/* <ul style={{listStyleType:"none",paddingLeft:10,margin:0}}>
                  <li>
                   VIBTIC
               </li>
@@ -101,7 +102,7 @@ setPad("80px")
               <li>
                   références
               </li>
-                 </ul>
+                 </ul> */}
               </li>
               <li>
                 <span>NOS ACTIVITÉS</span>
@@ -114,14 +115,14 @@ setPad("80px")
               <li>
                  réseaux & sécurité
               </li>
-              <li>
+              {/* <li>
                 système
+              </li> */}
+              <li>
+                  application web
               </li>
               <li>
-                  développement informatique
-              </li>
-              <li>
-                  gestion du projet et management
+                  gestion du projet
               </li>
           
               </ul>
@@ -130,9 +131,9 @@ setPad("80px")
                 <span> NOUS REJOINDRE</span>
              
                 <ul style={{listStyleType:"none",paddingLeft:10,margin:0}}>
-                <li>
+                {/* <li>
                  notre politique rh
-              </li>
+              </li> */}
               <li>
                  nos offres d'emploi
               </li>
@@ -142,7 +143,8 @@ setPad("80px")
                 </ul>
               </li>
               <li>
-             <span>NOUS CONTACTER</span> 
+                <Link to="/contact"><span>NOUS CONTACTER</span> </Link>
+             
               </li>
              
           </ul>
@@ -156,14 +158,15 @@ setPad("80px")
      :     
      <div  className="row navb" style={{  height:navHeight&&navHeight }}>
         <div className="col-4" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
-          <img src="/vibtic.png" alt="vibtic" style={{width:imgwidth ,height:imgHeight, transition: "width 0.5s"}} />
+          <Link to="/"><img src="/vibtic.png" alt="vibtic" style={{width:imgwidth ,height:imgHeight, transition: "width 0.5s"}} /></Link> 
         </div>
         <div className="col-xl-7 col-8 second">
             <div className="drop" style={{position:"relative",textDecoration:under==1&&"underline"}}>
-          <Link to="" onMouseEnter={()=>{setDrop({...drop,valeur:1});setUnder(1)}} onClick={()=>{setDrop({...drop,valeur:1});setUnder(1)}}>
-            QUI SOMMES-NOUS ? <MDBIcon icon="angle-down" className="ml-1" size="lg"/>
+          <Link to="/" onMouseEnter={()=>{setDrop({...drop,valeur:1})}} onClick={()=>{setDrop({...drop,valeur:1})}}>
+            QUI SOMMES-NOUS ?
+            {/* <MDBIcon icon="angle-down" className="ml-1" size="lg"/> */}
           </Link>
-         { drop.valeur==1&& <div style={{position:"absolute",top:30,right:0,width:"max-content"}}  onMouseLeave={()=>{setDrop({...drop,valeur:0});setUnder(0)}}>
+         {/* { drop.valeur==1&& <div style={{position:"absolute",top:30,right:0,width:"max-content"}}  onMouseLeave={()=>{setDrop({...drop,valeur:0});setUnder(0)}}>
           <ul  style={{listStyleType:"none",padding:0,margin:0}}>
               <li>
                   VIBTIC
@@ -181,7 +184,7 @@ setPad("80px")
                   références
               </li>
           </ul>
-          </div>}
+          </div>} */}
           </div >
           <div className="drop" style={{position:"relative",textDecoration:under==2&&"underline"}}>
           <Link to="" onMouseEnter={()=>{setDrop({...drop,valeur:2});setUnder(2)}} onClick={()=>{setDrop({...drop,valeur:2});setUnder(2)}} >
@@ -195,14 +198,14 @@ setPad("80px")
               <li>
                  réseaux & sécurité
               </li>
-              <li>
+              {/* <li>
                 système
+              </li> */}
+              <li>
+                  application web
               </li>
               <li>
-                  développement informatique
-              </li>
-              <li>
-                  gestion du projet et management
+                  gestion du projet
               </li>
           </ul>
           </div>}
@@ -213,9 +216,9 @@ setPad("80px")
           </Link>
          {drop.valeur==3&& <div  style={{position:"absolute",top:30,right:0,width:"max-content"}} onMouseLeave={()=>{setDrop({...drop,valeur:0});setUnder(0)}}>
          <ul  style={{listStyleType:"none",padding:0,margin:0}}>
-              <li>
+              {/* <li>
                  notre politique rh
-              </li>
+              </li> */}
               <li>
                  nos offres d'emploi
               </li>
@@ -227,7 +230,7 @@ setPad("80px")
           </div>}
           </div>
           <div style={{position:"relative"}}>
-          <Link to="">NOUS CONTACTER</Link>
+          <Link to="/contact">NOUS CONTACTER</Link>
           </div>
         </div>
       </div>}
