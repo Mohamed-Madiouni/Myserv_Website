@@ -71,7 +71,9 @@ setPad("80px")
      <div className="row navb" style={{ height:clk?290:55}}>
        
  <div className="col-8 pad"  style={{height:55,display:"flex",alignItems:"center",justifyContent:"flex-start"}}>
+          <Link to="/">
           <img src="/vibtic.png" alt="vibtic" className="img_vib"  style={{width:140 ,height:35}} />
+        </Link>
         </div>
 <div className="col-3" style={{height:55,display:"flex",justifyContent:"flex-end",alignItems:"center",fontSize:25}}>
 <MDBIcon icon={clk?"times":"align-justify"}  className="grey-text" onClick={()=>setClk(!clk)}/>

@@ -110,14 +110,8 @@ background-color: rgb(243, 243, 243);
 
 
 @media screen and (max-width:600px){
-    .msg-home{
-        padding-right: 0% !important;
-        top:20%;
-        font-size: 23px
-    }
-    .welcome{
-        height: 350px !important;
-    }
+    
+   
     
    
 }
@@ -138,6 +132,14 @@ background-color: rgb(243, 243, 243);
     }
     .compétence>div{
         width: 100% !important;
+    }
+    .welcome{
+        height: 350px !important;
+    }
+    .msg-home{
+        padding-right: 0% !important;
+        top:20%;
+        font-size: 23px
     }
 }
 @media screen and (max-width:832px){
