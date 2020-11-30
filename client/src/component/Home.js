@@ -90,7 +90,7 @@ Nos compétences
 </p>
         
 <div className="container" style={{color:"gray",fontSize: "23px",lineHeight: "50px",display:"flex",justifyContent:"center",alignItems:"center"}}>
-<p>L’équipe VIBTIC se compose d’analystes, d’experts, de développeurs d’applications et d’infrastructure réseau et sécurité, hautement qualifiés</p>
+<p style={{marginBottom:0}}>L’équipe VIBTIC se compose d’analystes, d’experts, de développeurs d’applications et d’infrastructure réseau et sécurité, hautement qualifiés</p>
 </div>
 </div>
 <div className="compétence container" style={{marginTop:30}}>

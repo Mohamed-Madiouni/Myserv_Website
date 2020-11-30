@@ -46,13 +46,14 @@ Phone
 +33651527439
 </p>
 </div>
-
+<div style={{marginBottom:50}}>
 <h5>
 Email
 </h5>
 <p>
 contact@vibtic.com
 </p>
+</div>
     </div>
 
 </div>
