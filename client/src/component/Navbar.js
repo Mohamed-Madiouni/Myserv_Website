@@ -68,7 +68,7 @@ setPad("80px")
   return (
     <>
      { size?
-     <div className="row navb" style={{ height:clk?290:55}}>
+     <div className="row navb" style={{ height:clk?220:55, transition: "all 0.4s"}}>
        
  <div className="col-8 pad"  style={{height:55,display:"flex",alignItems:"center",justifyContent:"flex-start"}}>
           <Link to="/">
@@ -81,7 +81,7 @@ setPad("80px")
 </div>
 
 
- {clk&& <div className="col-8 pad"  style={{marginBottom:110,lineHeight:"23px"}}>
+ {clk&& <div className="col-8 pad"  style={{marginBottom:15,lineHeight:"23px"}}>
 
   <ul className="ul_drop" style={{listStyleType:"none",padding:0,margin:0,color:"gray",fontSize:14,fontWeight: 500}}>
               <li>
@@ -107,8 +107,9 @@ setPad("80px")
                  </ul> */}
               </li>
               <li>
-                <span>NOS ACTIVITÉS</span>
-              
+                <Link to="/services"><span>NOS ACTIVITÉS</span></Link>
+                
+{/*               
               <ul style={{listStyleType:"none",paddingLeft:10,margin:0}}>
               
               <li>
@@ -117,9 +118,6 @@ setPad("80px")
               <li>
                  réseaux & sécurité
               </li>
-              {/* <li>
-                système
-              </li> */}
               <li>
                   application web
               </li>
@@ -127,7 +125,7 @@ setPad("80px")
                   gestion du projet
               </li>
           
-              </ul>
+              </ul> */}
               </li>
               <li>
                 <span> NOUS REJOINDRE</span>
@@ -137,10 +135,10 @@ setPad("80px")
                  notre politique rh
               </li> */}
               <li>
-                 nos offres d'emploi
+                <Link to="/offres" style={{color:"gray"}}>nos offres d'emploi</Link> 
               </li>
               <li>
-                candidature spantannée
+               <Link to="/candidature" style={{color:"gray"}}>candidature spantannée</Link> 
               </li>
                 </ul>
               </li>
@@ -189,10 +187,11 @@ setPad("80px")
           </div>} */}
           </div >
           <div className="drop" style={{position:"relative",textDecoration:under==2&&"underline"}}>
-          <Link to="" onMouseEnter={()=>{setDrop({...drop,valeur:2});setUnder(2)}} onClick={()=>{setDrop({...drop,valeur:2});setUnder(2)}} >
-            NOS ACTIVITÉS <MDBIcon icon="angle-down" className="ml-1" size="lg" />
+          <Link to="/services" onMouseEnter={()=>{setDrop({...drop,valeur:2})}} onClick={()=>{setDrop({...drop,valeur:2})}} >
+            NOS ACTIVITÉS 
+            {/* <MDBIcon icon="angle-down" className="ml-1" size="lg" /> */}
           </Link>
-          {drop.valeur==2&&<div style={{position:"absolute",top:30,right:0,width:"max-content"}} onMouseLeave={()=>{setDrop({...drop,valeur:0});setUnder(0)}}>
+          {/* {drop.valeur==2&&<div style={{position:"absolute",top:30,right:0,width:"max-content"}} onMouseLeave={()=>{setDrop({...drop,valeur:0});setUnder(0)}}>
           <ul  style={{listStyleType:"none",padding:0,margin:0}}>
               <li>
                   systéme d'information
@@ -200,9 +199,6 @@ setPad("80px")
               <li>
                  réseaux & sécurité
               </li>
-              {/* <li>
-                système
-              </li> */}
               <li>
                   application web
               </li>
@@ -210,7 +206,7 @@ setPad("80px")
                   gestion du projet
               </li>
           </ul>
-          </div>}
+          </div>} */}
           </div>
           <div className="drop" style={{position:"relative",textDecoration:under==3&&"underline"}}>
           <Link to="" onMouseEnter={()=>{setDrop({...drop,valeur:3});setUnder(3)}} onClick={()=>{setDrop({...drop,valeur:3});setUnder(3)}}>
@@ -222,10 +218,10 @@ setPad("80px")
                  notre politique rh
               </li> */}
               <li>
-                 nos offres d'emploi
+               <Link to="/offres" style={{fontSize:13}}>nos offres d'emploi</Link>  
               </li>
               <li>
-                candidature spantannée
+               <Link to="/candidature" style={{fontSize:13}}>candidature spantannée</Link> 
               </li>
              
           </ul>

@@ -2,6 +2,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 .App_center{ 
     width: 100%;

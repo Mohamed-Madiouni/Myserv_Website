@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "../contact.css";
 function Contact() {
+
+const [contactData,setContactData] = useState({
+  nom:"",
+  email:"",
+  sujet:"",
+  message:"",
+})
+
+const onChange = (e) =>{
+setContactData({...contactData,[e.target.id]:e.target.value})
+}
+
+const onSubmit= (e) =>{
+e.preventDefault()
+console.log(contactData)
+}
+
   return (
     <div>
       <div style={{ position: "relative" }}>
@@ -14,13 +31,13 @@ function Contact() {
 <div className="row" style={{margin:0,width:"100%",background:"rgb(243, 243, 243)"}}>
     <div className="col-lg-6 col-12 container">
     
-<form className="text-center  p-5" action="#!">
+<form className="text-center  p-5" action="#!" onSubmit={onSubmit}>
  
-    <input type="text" id="name" className="form-control mb-4" placeholder="nom"/>
-    <input type="email" id="email" className="form-control mb-4" placeholder="E-mail"/>
-    <input type="text" id="sujet" className="form-control mb-4" placeholder="Sujet"/>
+    <input type="text" id="nom" value={contactData.nom} className="form-control mb-4" placeholder="Nom" onChange={onChange}/>
+    <input type="email" id="email" value={contactData.email} className="form-control mb-4" placeholder="E-mail" onChange={onChange}/>
+    <input type="text" id="sujet" value={contactData.sujet} className="form-control mb-4" placeholder="Sujet" onChange={onChange}/>
     <div className="form-group">
-        <textarea className="form-control rounded-0" id="message" rows="5" placeholder="Message"></textarea>
+        <textarea className="form-control rounded-0" id="message" value={contactData.message} rows="5" placeholder="Message" onChange={onChange}></textarea>
     </div>
     
     <button className="btn  btn-block" type="submit" style={{background:"white"}}>Envoyer</button>

@@ -1,0 +1,112 @@
+.services_img{
+    background-position: center ;
+    background-repeat: no-repeat ;
+    background-size: cover ;
+    filter:brightness(70%)
+}
+.services_para{
+    color: white;
+    font-size: 45px;
+    position: absolute;
+    top:45%;
+    left:6%
+  
+}
+.systeme_info{
+    height: 450px;
+    margin-top: 90px;
+    position: relative;
+}
+.systeme_info>div>i{
+  font-size: 40px;
+   color: gray;
+}
+.systeme_info>div>span{
+    font-size: 19px;
+     color:  rgba(117, 3, 3, 0.452);
+     margin-top: 10px;
+     font-weight: 600;
+  }
+.systeme_info>div{
+    position: absolute;
+     top: -75px;
+    right: -75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid rgba(117, 3, 3, 0.452);
+    background: white;
+}
+.services_list a{
+    color: gray;
+    font-size: 20px;
+    padding: 10px 20px;
+    font-weight: 550;
+}
+.systeme_info + div{
+    margin-top: 150px;
+    font-size: 20px;
+    padding-left: 40px;
+}
+.services_list a:hover{
+    color:rgb(29, 132, 201)
+}
+@media screen and (max-width:1100px){
+    .services_list a{
+       
+        font-size: 16px;
+        padding: 15px 10px;
+    }
+    
+}
+@media screen and (max-width:992px){
+    .systeme_info>div{
+      
+         top: 20px;
+        left: 20px;
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+        border: 1px solid rgba(117, 3, 3, 0.452);
+        background: white;
+    }
+    .systeme_info{
+margin-top: 0px;
+height: 350px;
+    }
+    .systeme_info + div{
+        margin-top: 0px;
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+}
+@media screen and (max-width:850px){
+    .services_list a{
+       
+        font-size: 11px;
+        padding: 10px 5px;
+    }
+    
+}
+@media screen and (max-width:560px){
+    .services_list a{
+       
+        font-size: 7px;
+        padding: 10px 4px;
+    }
+    .services_para{
+      
+        font-size: 30px;
+        
+    }
+    
+}
+@media screen and (max-width:1100px){
+.systeme_info{
+    height: 500px;
+}
+}

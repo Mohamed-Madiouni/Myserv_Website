@@ -1,6 +1,8 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import "../home.css"
 function Home() {
+  const history=useHistory()
   return (
     <>
       <div className="welcome"style={{ width: "100%", position: "relative", height: 550 }}>
@@ -39,7 +41,9 @@ Nous proposons les solutions les plus performantes et innovantes du marché et p
           </div>
           <div className="col-12 col-lg-6 " style={{padding:0}}>
 <div className="row services_containers" style={{width:"100%",margin:0}}>
-<div className="col-sm-6 col-12" style={{border:"1px solid gray",position:"relative",height:300,padding:2,cursor:"pointer"}}>
+<div className="col-sm-6 col-12" style={{border:"1px solid gray",position:"relative",height:300,padding:2,cursor:"pointer"}}
+onClick={()=>history.push("/services")}
+>
 <i className="fas fa-sitemap" style={{position:"absolute",top:10,right:10,fontSize:60}}></i>
 <p style={{marginTop:85,marginBottom:0}} className="container">
   <b>SYSTÈME D’INFORMATION</b>
@@ -48,7 +52,9 @@ Nous proposons les solutions les plus performantes et innovantes du marché et p
 </p>
   
 </div>
-<div className="col-12 col-sm-6" style={{border:"1px solid gray",position:"relative",height:300,padding:2,cursor:"pointer"}}>
+<div className="col-12 col-sm-6" style={{border:"1px solid gray",position:"relative",height:300,padding:2,cursor:"pointer"}}
+onClick={()=>history.push("/services")}
+>
 <i className="fas fa-lock" style={{position:"absolute",top:10,right:10,fontSize:60}}></i>
 <p style={{marginTop:85,marginBottom:0}} className="container">
   <b>RÉSEAUX ET SÉCURITÉ</b>
@@ -59,7 +65,9 @@ Nous proposons les solutions les plus performantes et innovantes du marché et p
 </div>
 </div>
 <div className="row services_containers" style={{width:"100%",margin:0}}>
-<div className="col-12 col-sm-6" style={{border:"1px solid gray",position:"relative",height:300,padding:2,cursor:"pointer"}}>
+<div className="col-12 col-sm-6" style={{border:"1px solid gray",position:"relative",height:300,padding:2,cursor:"pointer"}}
+onClick={()=>history.push("/services")}
+>
 <i className="fas fa-desktop" style={{position:"absolute",top:10,right:10,fontSize:60}}></i>
 <p style={{marginTop:85,marginBottom:0}} className="container">
   <b>APPLICATIONS WEB</b>
@@ -68,7 +76,9 @@ Nous proposons les solutions les plus performantes et innovantes du marché et p
 </p>
   
 </div>
-<div className="col-12 col-sm-6" style={{border:"1px solid gray",position:"relative",height:300,padding:2,cursor:"pointer"}}>
+<div className="col-12 col-sm-6" style={{border:"1px solid gray",position:"relative",height:300,padding:2,cursor:"pointer"}}
+onClick={()=>history.push("/services")}
+>
 <i className="fas fas fa-puzzle-piece" style={{position:"absolute",top:10,right:10,fontSize:60}}></i>
 <p style={{marginTop:85,marginBottom:0}} className="container">
   <b>GESTION DU PROJET</b>

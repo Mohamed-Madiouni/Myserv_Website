@@ -1,0 +1,32 @@
+.candidature_img{
+    background-position: center ;
+    background-repeat: no-repeat ;
+    background-size: cover ;
+    filter:brightness(50%)
+}
+.candidature_para{
+    color: white;
+    font-size: 45px;
+    position: absolute;
+    top:45%;
+    left:6%
+  
+}
+.deposer{
+    font-size: 25px;
+    font-weight: 600;
+}
+@media screen and (max-width:600px)
+{
+    .deposer{
+        font-size: 18px;
+        font-weight: 600;
+    }
+}
+@media screen and (max-width:400px)
+{
+    .deposer{
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
