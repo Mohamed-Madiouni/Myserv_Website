@@ -3,7 +3,7 @@ import "../services.css"
 
 function Services() {
     return (
-        <div>
+        <div style={{background:"#f8f9fa"}}>
              <div style={{ position: "relative" }}>
         <div
           className="services_img"

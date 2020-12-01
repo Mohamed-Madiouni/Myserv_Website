@@ -1,7 +1,8 @@
 .msg-home{
-    padding-right: 50%;
+    padding-right: 40%;
     top:29%;
-    font-size: 30px
+    font-size: 35px;
+    font-style: italic;
 }
 .welcome{
     height: 550px;
@@ -9,20 +10,21 @@
 
 .service_img{
     height: 600px;
+    filter: brightness(60%);
 }
 .services_containers p{
     font-size: 16px;
     line-height: 30px;
-    color: gray;
+    color: #868e96;
 }
 .services_containers b{
     font-size: 18 !important;
     color: black;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-weight: 700;
+    
 }
 .services_containers i{
-    color:gray
+    color:white
 }
 
 .services_containers>div:hover{
@@ -31,14 +33,16 @@
     color: var(--slideTextColor);
     cursor: pointer;
     background-position: -100% 100%;
+    border: none;
 }
 .services_containers>div{
+    border:0.5px solid #868e96;
     /* transition: background-color 0.3s linear; */
-    --initialTextColor: gray;
+    --initialTextColor: #868e96;
     --slideTextColor: white;
 
     --initialBgColor: white;
-    --slideBgColor:  rgb(158, 158, 158);
+    --slideBgColor:#f6b21b;
 
     color: var(--initialTextColor);
 
@@ -48,17 +52,22 @@
         var(--slideBgColor) 50%,
         var(--slideBgColor) 100%);
     background-size: 200%;
-    transition: background-position .4s cubic-bezier(.47, .1, 1, .63),
-      color .2s linear;
-    transition-delay: 0.0s, 0.1s;
+    transition: background-position .4s linear,
+      color .4s linear;
+    /* transition-delay: 0.0s, 0.1s; */
 }
 .services_containers>div:hover p{
    color: white !important;
 }
 .services_containers>div:hover i{
-    color: white !important;
+    color: #f6b21b !important;
  }
- 
+ .icon_container{
+    background:#f6b21b
+ }
+ .services_containers>div:hover .icon_container{
+     background: black;
+ }
 
  .service_para{
     line-height: 60px;
@@ -66,15 +75,16 @@
     padding: 5px;
 padding-right:22%;
 font-size: 26px;
-color: black;
+color:white;
  }
  .service_para>b{
-     color:rgb(70, 69, 69) !important;
+     color:white !important;
      font-size: 35px;
+     font-weight: 700;
  }
  
  .partenaire_text{
-     color:gray;
+     color:#868e96;
      font-size: 26px;
      line-height: 50px;
      padding-top: 5%;
@@ -82,7 +92,8 @@ color: black;
  }
  .partenaire_text>b{
      font-size: 30px;
-     color: rgb(71, 71, 71);
+     color: black;
+     font-weight: 700;
  }
  .partenaire_text>span{
     font-weight: 600px;
@@ -90,12 +101,15 @@ color: black;
 }
 
 .partenaire {
-background-color: rgb(243, 243, 243);
+background-color: #f8f9fa;
 }
 
 
 .compétence{
     display: flex;
+    width: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 .compétence>div{
     width: 50%;
@@ -103,19 +117,23 @@ background-color: rgb(243, 243, 243);
     flex-direction: column;
     /* margin-left: 8%; */
     font-size: 18px;
-    color: gray;
+ 
 }
 
 
 
 
-@media screen and (max-width:600px){
+@media screen and (max-width:992px){
     
-   
+    .compétence{
+        flex-direction: column;
+        margin-left: 10%;
+        margin-right: 0px
+    }
     
    
 }
-@media screen and (max-width:800px){
+@media screen and (max-width:950px){
     .msg-home{
        
         top:20%;
@@ -127,9 +145,7 @@ background-color: rgb(243, 243, 243);
     .service_img{
         height: 350px !important;
     }
-    .compétence{
-        flex-direction: column;
-    }
+    
     .compétence>div{
         width: 100% !important;
     }
@@ -155,4 +171,9 @@ background-color: rgb(243, 243, 243);
     line-height: 40px;
     top:5%;
 }
+}
+@media screen and (max-width:350px){
+    .msg-home{
+        top:10%
+    }
 }

@@ -28,7 +28,7 @@ console.log(contactData)
         <p className="contact_para">Nous contacter</p>
       </div>
 
-<div className="row" style={{margin:0,width:"100%",background:"rgb(243, 243, 243)"}}>
+<div className="row" style={{margin:0,width:"100%",background:"#f8f9fa"}}>
     <div className="col-lg-6 col-12 container">
     
 <form className="text-center  p-5" action="#!" onSubmit={onSubmit}>
@@ -46,7 +46,7 @@ console.log(contactData)
 
 
     </div>
-    <div className="col-lg-6 col-12 container" style={{display:"flex",justifyContent:"center",flexDirection:"column",paddingLeft:"10%"}}>
+    <div className="col-lg-6 col-12 container" style={{color:"black",display:"flex",justifyContent:"center",flexDirection:"column",paddingLeft:"10%"}}>
 <div style={{marginBottom:50}}>
         <h5 >
             Addresse

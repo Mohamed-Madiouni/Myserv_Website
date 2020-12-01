@@ -76,14 +76,14 @@ setPad("80px")
         </Link>
         </div>
 <div className="col-3" style={{height:55,display:"flex",justifyContent:"flex-end",alignItems:"center",fontSize:25}}>
-<MDBIcon icon={clk?"times":"align-justify"}  className="grey-text" onClick={()=>setClk(!clk)}/>
+<MDBIcon icon={clk?"times":"align-justify"}  className="white-text" onClick={()=>setClk(!clk)}/>
 
 </div>
 
 
  {clk&& <div className="col-8 pad"  style={{marginBottom:15,lineHeight:"23px"}}>
 
-  <ul className="ul_drop" style={{listStyleType:"none",padding:0,margin:0,color:"gray",fontSize:14,fontWeight: 500}}>
+  <ul className="ul_drop" style={{listStyleType:"none",padding:0,margin:0,color:"white",fontSize:14,fontWeight: 500}}>
               <li>
                 <Link to="/"> <span>QUI SOMMES-NOUS ?</span></Link>
                
@@ -135,10 +135,10 @@ setPad("80px")
                  notre politique rh
               </li> */}
               <li>
-                <Link to="/offres" style={{color:"gray"}}>nos offres d'emploi</Link> 
+                <Link to="/offres" style={{color:"#F1F1F1 "}}>nos offres d'emploi</Link> 
               </li>
               <li>
-               <Link to="/candidature" style={{color:"gray"}}>candidature spantannée</Link> 
+               <Link to="/candidature" style={{color:"#F1F1F1 "}}>candidature spantannée</Link> 
               </li>
                 </ul>
               </li>
@@ -220,7 +220,7 @@ setPad("80px")
               <li>
                <Link to="/offres" style={{fontSize:13}}>nos offres d'emploi</Link>  
               </li>
-              <li>
+              <li style={{border:"none"}}>
                <Link to="/candidature" style={{fontSize:13}}>candidature spantannée</Link> 
               </li>
              

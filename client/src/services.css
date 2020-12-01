@@ -19,11 +19,11 @@
 }
 .systeme_info>div>i{
   font-size: 40px;
-   color: gray;
+   color: black;
 }
 .systeme_info>div>span{
     font-size: 19px;
-     color:  rgba(117, 3, 3, 0.452);
+     color:  black;
      margin-top: 10px;
      font-weight: 600;
   }
@@ -38,11 +38,11 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 1px solid rgba(117, 3, 3, 0.452);
-    background: white;
+    border: 1px solid #f6b21b;
+    background: #f6b21b;
 }
 .services_list a{
-    color: gray;
+    color: black;
     font-size: 20px;
     padding: 10px 20px;
     font-weight: 550;
@@ -53,7 +53,7 @@
     padding-left: 40px;
 }
 .services_list a:hover{
-    color:rgb(29, 132, 201)
+    color:rgb(106, 206, 219)
 }
 @media screen and (max-width:1100px){
     .services_list a{
